@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.realp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".common.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/mainicon"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="Chatting.AddFromRoom"></activity>
+        <activity android:name=".ShowNotice" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" /> <!-- 카카오 키연결 -->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" /> <!-- 파일프로바이더 생성 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider> <!-- 로그인 -->
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" /> <!-- 회원가입 -->
+        <activity
+            android:name=".JoinActivity"
+            android:screenOrientation="portrait" /> <!-- sns회원가입 -->
+        <activity
+            android:name=".SnsJoinActivity"
+            android:screenOrientation="portrait" /> <!-- 약관동의 -->
+        <activity
+            android:name=".TermActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="Project.Request.OutMemberReq" />
+        <activity android:name="Chatting.FriendList" />
+        <activity android:name="Chatting.Chating" />
+        <activity android:name="Project.SettingList" />
+        <activity android:name="Project.EditProject" />
+        <activity android:name="Project.CalList" />
+        <activity android:name="Project.CalManage" />
+        <activity android:name="Project.ShowTask" />
+        <activity android:name="Project.ShowFileList" />
+        <activity android:name="Project.ShowProject" />
+        <activity android:name="Project.addProjectC2" />
+        <activity android:name="Project.addProjectC1" />
+        <activity android:name=".BB_Write" />
+        <activity android:name=".CB_Write" />
+        <activity android:name=".BB_Read" />
+        <activity android:name=".CB_Read" />
+        <activity
+            android:name="Project.RequestSecDialog"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity
+            android:name="Project.ResultSecDialog"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name=".Notification_List" />
+        <activity android:name=".Feedback_List" />
+        <activity android:name=".Editor_profile" />
+        <activity android:name=".Friends_List" />
+        <activity android:name=".NoticeList" />
+        <activity
+            android:name=".Profile"
+            android:parentActivityName="Project.MainActivity" /> <!-- 시작 -->
+        <activity android:name=".First">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="Project.MainActivity" />
+
+        <receiver android:name=".ReminderBroadcastReiceiver" />
+
+        <service android:name=".FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="Project.DismissReciever" />
+        <receiver android:name=".DisFriendReciever" />
+        <receiver android:name="Project.AccReciever" />
+    </application>
+
+</manifest>

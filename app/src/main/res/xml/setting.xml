@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="myinfo"
+        android:layout="@layout/settingcategory"
+        android:title="내 정보">
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:title="프로필">
+            <intent
+                android:targetClass="com.example.realp.Profile"
+                android:targetPackage="com.example.realp" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:layout_marginLeft="10dp"
+            android:layout="@layout/settingscreen"
+            android:title="개인정보 수정">
+            <intent
+                android:targetPackage="com.example.realp"
+                android:targetClass="com.example.realp.Editor_profile"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="help"
+        android:layout="@layout/settingcategory"
+        android:title="도움말">
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:title="공지사항">
+            <intent
+                android:targetClass="com.example.realp.NoticeList"
+                android:targetPackage="com.example.realp" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:title="피드백">
+            <intent
+                android:targetPackage="com.example.realp"
+                android:targetClass="com.example.realp.Feedback_List"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="list"
+        android:layout="@layout/settingcategory"
+        android:title="목록">
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:title="알림 목록">
+            <intent
+                android:targetPackage="com.example.realp"
+                android:targetClass="com.example.realp.Notification_List"/>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:title="친구목록">
+            <intent
+                android:targetClass="com.example.realp.Friends_List"
+                android:targetPackage="com.example.realp" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:layout="@layout/settingscreen"
+            android:key="logout"
+            android:title="로그아웃">
+            <intent android:action="android.intent.action.VIEW" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

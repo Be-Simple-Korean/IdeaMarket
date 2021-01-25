@@ -1,0 +1,601 @@
+Index: app/src/main/res/layout/activity_add_from_room.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".AddFromRoom\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"@color/colorPrimary\"\r\n        android:gravity=\"center\">\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"채팅 리스트\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"/>\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\"\r\n        android:weightSum=\"10\">\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_weight=\"10\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginBottom=\"10dp\"\r\n        android:id=\"@+id/lvInAfr\"/>\r\n    <Button\r\n        android:onClick=\"backToSp\"\r\n        android:layout_weight=\"10\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"완료\"/>\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_add_from_room.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_add_from_room.xml	(date 1611403423814)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent"
+-    tools:context=".AddFromRoom">
++    tools:context="Chatting.AddFromRoom">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="70dp"
+Index: app/src/main/res/layout/set_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:padding=\"15dp\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n        <TextView\r\n            android:id=\"@+id/barname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"프로젝트 설정\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/backFromSet\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/set_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/set_bar.xml	(date 1611404363455)
+@@ -5,7 +5,7 @@
+     android:padding="15dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+         <TextView
+             android:id="@+id/barname"
+             android:layout_width="wrap_content"
+Index: app/src/main/res/layout/activity_show_file_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ShowFileList\">\r\n    <include\r\n        layout=\"@layout/storage_bar\"/>\r\n<RelativeLayout\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:id=\"@+id/showFileListView\"\r\n        android:scrollbarFadeDuration=\"0\"\r\n        android:scrollbarSize=\"5dp\"\r\n        android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n        android:scrollbars=\"vertical\" />\r\n    <TextView\r\n        android:id=\"@+id/tv_isNull\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:visibility=\"invisible\"\r\n        android:text=\"파일이 없습니다.\"\r\n        android:gravity=\"center\"\r\n        android:layout_centerInParent=\"true\"/>\r\n</RelativeLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_show_file_list.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_show_file_list.xml	(date 1611404363356)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent"
+-    tools:context=".ShowFileList">
++    tools:context="Project.ShowFileList">
+     <include
+         layout="@layout/storage_bar"/>
+ <RelativeLayout
+Index: app/src/main/res/layout/activity_edit_project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".EditProject\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n\r\n        android:orientation=\"vertical\"\r\n        android:layout_marginTop=\"20dp\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"horizontal\">\r\n            <EditText\r\n                android:id=\"@+id/ed_pName\"\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"프로젝트명\"\r\n                android:textCursorDrawable=\"@drawable/cursor_black\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:gravity=\"center\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n            <EditText\r\n                android:layout_marginTop=\"5dp\"\r\n                android:id=\"@+id/ed_tname\"\r\n                android:layout_width=\"300dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"팀명\"\r\n                android:textCursorDrawable=\"@drawable/cursor_black\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"horizontal\">\r\n            <EditText\r\n                android:layout_marginTop=\"10dp\"\r\n                android:id=\"@+id/ed_tsub\"\r\n                android:layout_width=\"300dp\"\r\n                android:textCursorDrawable=\"@drawable/cursor_black\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"주제\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\" />\r\n\r\n        </LinearLayout>\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:gravity=\"left|center\"\r\n            android:layout_marginLeft=\"30dp\"\r\n            android:orientation=\"horizontal\">\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"종료기간\"\r\n                android:textColor=\"#090707\"\r\n                android:textSize=\"25sp\" />\r\n            <TextView\r\n                android:id=\"@+id/tv_fd\"\r\n                android:layout_width=\"150dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"15dp\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"yyyy.MM.dd\"\r\n                android:singleLine=\"true\"\r\n                android:textSize=\"20sp\" />\r\n            <ImageView\r\n                android:id=\"@+id/ed_fd\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:src=\"@drawable/addnamebutton\" />\r\n        </LinearLayout>\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_marginTop=\"20dp\"\r\n            android:layout_width=\"match_parent\"\r\n            android:orientation=\"horizontal\"\r\n            android:layout_height=\"wrap_content\">\r\n            <TextView\r\n                android:id=\"@+id/txtName\"\r\n                android:layout_width=\"100dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"이름\"\r\n                android:gravity=\"center\"\r\n                android:textColor=\"#090808\"\r\n                android:textSize=\"25sp\" />\r\n            <TextView\r\n                android:layout_width=\"190dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"역할\"\r\n                android:id=\"@+id/txtChar\"\r\n                android:gravity=\"center\"\r\n                android:textColor=\"#090808\"\r\n                android:textSize=\"25sp\" />\r\n            <TextView\r\n                android:layout_width=\"80dp\"\r\n                android:gravity=\"center\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"직책\"\r\n                android:textColor=\"#090808\"\r\n                android:textSize=\"25sp\" />\r\n        </LinearLayout>\r\n\r\n        <androidx.recyclerview.widget.RecyclerView\r\n            android:layout_marginTop=\"10dp\"\r\n            android:id=\"@+id/setProjectView\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"300dp\"\r\n            android:scrollbarFadeDuration=\"0\"\r\n            android:scrollbarSize=\"5dp\"\r\n            android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n            android:scrollbars=\"vertical\" />\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:paddingLeft=\"15dp\"\r\n            android:paddingRight=\"15dp\">\r\n\r\n            <Button\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"center\"\r\n                android:background=\"@drawable/addbtndesign\"\r\n                android:gravity=\"left|center\"\r\n                android:onClick=\"addTeamUser\"\r\n                android:padding=\"10dp\"\r\n                android:text=\"   +   팀원 추가\"\r\n                android:textColor=\"#0A0A0A\"\r\n                android:textSize=\"20sp\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_margin=\"30dp\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"horizontal\">\r\n            <TextView\r\n                android:onClick=\"backToSetList\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"취소\"\r\n                android:textSize=\"20sp\"\r\n                android:textColor=\"#FFB400\"\r\n                />\r\n            <TextView\r\n                android:layout_marginLeft=\"40dp\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"완료\"\r\n                android:textColor=\"#FFB400\"\r\n                android:textSize=\"20sp\"\r\n                android:onClick=\"updateProject\"/>\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_edit_project.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_edit_project.xml	(date 1611404362984)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".EditProject">
++    tools:context="Project.EditProject">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+Index: app/src/main/res/layout/activity_out_member_req.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".OutMemberReq\">\r\n\r\n    <RelativeLayout\r\n        android:id=\"@+id/relativeLayout2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:background=\"#FFB400\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/iv_backtoList\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentLeft=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:text=\"팀원 목록\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_d_user\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"15dp\"\r\n            android:text=\"선택 완료\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"15sp\"\r\n            android:textStyle=\"bold\" />\r\n    </RelativeLayout>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/ChaseView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:scrollbarFadeDuration=\"0\"\r\n        android:scrollbarSize=\"5dp\"\r\n        android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n        android:scrollbars=\"vertical\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/relativeLayout2\" />\r\n\r\n\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_out_member_req.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_out_member_req.xml	(date 1611405440882)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".OutMemberReq">
++    tools:context="Project.Request.OutMemberReq">
+ 
+     <RelativeLayout
+         android:id="@+id/relativeLayout2"
+Index: app/src/main/res/layout/activity_setting_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".SettingList\">\r\n    <include\r\n        android:layout_height=\"wrap_content\"\r\n        layout=\"@layout/set_bar\"\r\n        android:layout_width=\"match_parent\"></include>\r\n    <TextView\r\n        android:id=\"@+id/tv_setproject\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"프로젝트 정보수정\"\r\n        android:paddingTop=\"10dp\"\r\n        android:paddingLeft=\"18dp\"\r\n        android:paddingBottom=\"10dp\"\r\n        android:textSize=\"30sp\"/>\r\n    <View\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"1dp\"\r\n        android:background=\"#FFB400\"/>\r\n    <LinearLayout\r\n        android:id=\"@+id/outTeam\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/tv_outTeam\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"팀 탈퇴 요청\"\r\n            android:paddingTop=\"10dp\"\r\n            android:paddingLeft=\"18dp\"\r\n            android:paddingBottom=\"10dp\"\r\n            android:textSize=\"30sp\"/>\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"1dp\"\r\n            android:background=\"#FFB400\"/>\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:id=\"@+id/outMember\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/tv_outMember\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"팀원 추방\"\r\n            android:paddingTop=\"10dp\"\r\n            android:paddingLeft=\"18dp\"\r\n            android:paddingBottom=\"10dp\"\r\n            android:textSize=\"30sp\"/>\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"1dp\"\r\n            android:background=\"#FFB400\"/>\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:orientation=\"vertical\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/end_project\"\r\n            android:onClick=\"deleteProject\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"프로젝트 종료\"\r\n            android:paddingTop=\"10dp\"\r\n            android:paddingLeft=\"18dp\"\r\n            android:paddingBottom=\"10dp\"\r\n            android:textSize=\"30sp\"/>\r\n        <View\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"1dp\"\r\n            android:background=\"#FFB400\"/>\r\n    </LinearLayout>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_setting_list.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_setting_list.xml	(date 1611404363288)
+@@ -5,7 +5,7 @@
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".SettingList">
++    tools:context="Project.SettingList">
+     <include
+         android:layout_height="wrap_content"
+         layout="@layout/set_bar"
+Index: app/src/main/res/layout/task_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:paddingTop=\"20dp\"\r\n        android:paddingBottom=\"15dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"할 일\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/iv_taskBack\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/task_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/task_bar.xml	(date 1611404363031)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:paddingLeft="20dp"
+Index: app/src/main/res/layout/callist_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:padding=\"15dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/calname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"일정 목록\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/iv_backTocal\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/callist_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/callist_bar.xml	(date 1611404363203)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:padding="15dp"
+Index: app/src/main/res/layout/buylist_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:paddingTop=\"20dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/barnameB\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"아이디어 판매 게시판\"/>\r\n\r\n\r\n        <ImageButton\r\n            android:id=\"@+id/buy_write\"\r\n            android:layout_width=\"44dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:background=\"#FFB400\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"0dp\"\r\n            android:src=\"@drawable/write\" />\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/buylist_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/buylist_bar.xml	(date 1611404363019)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:paddingLeft="20dp"
+Index: app/src/main/res/layout/cr_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:padding=\"15dp\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/barname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:text=\"아이디어 협업 글\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:textStyle=\"bold\" />\r\n        <ImageButton\r\n            android:id=\"@+id/backFromSet\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentLeft=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:background=\"#FFB400\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\" />\r\n        <TextView\r\n            android:id=\"@+id/c_del\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:textSize=\"20sp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:visibility=\"invisible\"\r\n            android:textColor=\"#ffffff\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:text=\"삭제\" />\r\n\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/cr_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/cr_bar.xml	(date 1611404363449)
+@@ -5,7 +5,7 @@
+     android:padding="15dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+ 
+         <TextView
+             android:id="@+id/barname"
+Index: app/src/main/res/layout/activity_show_project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.drawerlayout.widget.DrawerLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:id=\"@+id/drawer_layout\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ShowProject\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n            <include\r\n                android:layout_height=\"wrap_content\"\r\n                layout=\"@layout/sp_bar\"\r\n                android:layout_width=\"match_parent\"></include>\r\n        </LinearLayout>\r\n    <LinearLayout\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginLeft=\"10dp\"\r\n        android:layout_marginRight=\"10dp\"\r\n        android:gravity=\"center\"\r\n        android:background=\"@drawable/addbtndesign\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\">\r\n        <TextView\r\n            android:id=\"@+id/tv_inTheme\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:textSize=\"20sp\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#161616\"\r\n            android:text=\"주제 \"/>\r\n    </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:gravity=\"center\"\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:orientation=\"vertical\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"70dp\">\r\n            <TextView\r\n                android:onClick=\"openTask\"\r\n                android:id=\"@+id/tv_inTesk\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:gravity=\"center\"\r\n                android:textSize=\"20sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"#161616\"\r\n                android:text=\"할 일\"/>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:gravity=\"center\"\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:orientation=\"vertical\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"70dp\">\r\n            <TextView\r\n                android:id=\"@+id/tv_inCalendar\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:gravity=\"center\"\r\n                android:textSize=\"20sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"#161616\"\r\n                android:text=\"일정 관리\"/>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:gravity=\"center\"\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:orientation=\"vertical\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"70dp\">\r\n            <TextView\r\n                android:id=\"@+id/tv_inStrage\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:gravity=\"center\"\r\n                android:textSize=\"20sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"#161616\"\r\n                android:text=\"자료 저장소\"/>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:gravity=\"center\"\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:orientation=\"vertical\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"70dp\">\r\n            <TextView\r\n                android:id=\"@+id/tv_inChat\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"match_parent\"\r\n                android:onClick=\"conCRoom\"\r\n                android:gravity=\"center\"\r\n                android:textSize=\"20sp\"\r\n                android:textStyle=\"bold\"\r\n                android:textColor=\"#161616\"\r\n                android:text=\"팀 전용 채팅방\"/>\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n\r\n    <include\r\n        layout=\"@layout/show_team\"/>\r\n</androidx.drawerlayout.widget.DrawerLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_show_project.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_show_project.xml	(date 1611404363309)
+@@ -6,7 +6,7 @@
+     android:layout_width="match_parent"
+     android:id="@+id/drawer_layout"
+     android:layout_height="match_parent"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+Index: app/src/main/res/layout/readboard_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:padding=\"15dp\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <TextView\r\n        android:id=\"@+id/barnameRead\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:textStyle=\"bold\"\r\n        android:textColor=\"#ffffff\"\r\n        android:textSize=\"20sp\"\r\n        android:text=\"프로젝트 설정\"/>\r\n    <ImageButton\r\n        android:background=\"#FFB400\"\r\n        android:id=\"@+id/backFromSetRead\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n        android:layout_alignParentLeft=\"true\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/readboard_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/readboard_bar.xml	(date 1611404363490)
+@@ -5,7 +5,7 @@
+     android:padding="15dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <TextView
+         android:id="@+id/barnameRead"
+         android:layout_width="wrap_content"
+Index: app/src/main/res/layout/activity_cal_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".CalList\">\r\n    <include\r\n        android:layout_height=\"wrap_content\"\r\n        layout=\"@layout/callist_bar\"\r\n        android:layout_width=\"match_parent\"></include>\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:id=\"@+id/allCalList\"\r\n        android:scrollbarFadeDuration=\"0\"\r\n        android:scrollbarSize=\"5dp\"\r\n        android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n        android:scrollbars=\"vertical\"\r\n        android:layout_marginTop=\"10dp\"/>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_cal_list.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_cal_list.xml	(date 1611405441200)
+@@ -5,7 +5,7 @@
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".CalList">
++    tools:context="Project.CalList">
+     <include
+         android:layout_height="wrap_content"
+         layout="@layout/callist_bar"
+Index: app/src/main/res/layout/activity_friend_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".FriendList\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"70dp\"\r\n        android:orientation=\"vertical\"\r\n        android:gravity=\"center\"\r\n        android:background=\"#FFB400\">\r\n        <TextView\r\n            android:textStyle=\"bold\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#ffffff\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"친구 목록\"/>\r\n    </LinearLayout>\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:id=\"@+id/freindview\"/>\r\n    <Button\r\n        android:id=\"@+id/addChatRoom\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginLeft=\"10dp\"\r\n        android:layout_marginRight=\"10dp\"\r\n        android:text=\"완료\"\r\n        android:layout_marginTop=\"20dp\"/>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_friend_list.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_friend_list.xml	(date 1611403001747)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent"
+-    tools:context=".FriendList">
++    tools:context="Chatting.FriendList">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="70dp"
+Index: app/src/main/res/layout/storage_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:paddingTop=\"20dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"자료 저장소\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/iv_strBack\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/iv_upload\"\r\n            android:layout_width=\"44dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"0dp\"\r\n            android:src=\"@drawable/ic_file_upload_black_24dp\" />\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/storage_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/storage_bar.xml	(date 1611404363470)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:paddingLeft="20dp"
+Index: app/src/main/res/layout/buywrite_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:padding=\"15dp\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <TextView\r\n        android:id=\"@+id/barname2\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:textStyle=\"bold\"\r\n        android:textColor=\"#ffffff\"\r\n        android:textSize=\"20sp\"\r\n        android:text=\"판매 글쓰기\"/>\r\n    <ImageButton\r\n        android:background=\"#FFB400\"\r\n        android:id=\"@+id/backFromSetWrite\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n        android:layout_alignParentLeft=\"true\" />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/buywrite_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/buywrite_bar.xml	(date 1611404363025)
+@@ -5,7 +5,7 @@
+     android:padding="15dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <TextView
+         android:id="@+id/barname2"
+         android:layout_width="wrap_content"
+Index: app/src/main/res/layout/sp_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:paddingTop=\"20dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/barname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"프로젝트\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/iv_back\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/iv_menu\"\r\n            android:layout_width=\"44dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"0dp\"\r\n            android:src=\"@drawable/drawmenu\" />\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/sp_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/sp_bar.xml	(date 1611404363048)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:paddingLeft="20dp"
+Index: app/src/main/res/layout/activity_cal_manage.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".CalManage\">\r\n    <include\r\n        android:layout_height=\"wrap_content\"\r\n        layout=\"@layout/cal_bar\"\r\n        android:layout_width=\"match_parent\"></include>\r\n\r\n    <CalendarView\r\n        android:theme=\"@style/time\"\r\n        android:id=\"@+id/calendarView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        >\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"일정\"\r\n            android:id=\"@+id/text\"\r\n            android:layout_centerVertical=\"true\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#FFB400\"/>\r\n        <TextView\r\n            android:id=\"@+id/curDate\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"yyyy.mm.dd\"\r\n            android:layout_toRightOf=\"@+id/text\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:textSize=\"20sp\"/>\r\n        <Button\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:id=\"@+id/addCal\"\r\n            android:layout_width=\"70dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"추가\"\r\n            android:layout_alignParentRight=\"true\"/>\r\n    </RelativeLayout>\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_marginTop=\"10dp\"\r\n        android:id=\"@+id/calView\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:scrollbarFadeDuration=\"0\"\r\n        android:scrollbarSize=\"5dp\"\r\n        android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n        android:scrollbars=\"vertical\" />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_cal_manage.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_cal_manage.xml	(date 1611404363476)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".CalManage">
++    tools:context="Project.CalManage">
+     <include
+         android:layout_height="wrap_content"
+         layout="@layout/cal_bar"
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.realp\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\r\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\r\n\r\n    <application\r\n        android:name=\".common.MyApplication\"\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@drawable/mainicon\"\r\n        android:label=\"@string/app_name\"\r\n        android:requestLegacyExternalStorage=\"true\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/AppTheme\"\r\n        android:usesCleartextTraffic=\"true\">\r\n        <activity android:name=\".AddFromRoom\"></activity>\r\n        <activity android:name=\".ShowNotice\" />\r\n\r\n        <uses-library\r\n            android:name=\"org.apache.http.legacy\"\r\n            android:required=\"false\" /> <!-- 카카오 키연결 -->\r\n        <meta-data\r\n            android:name=\"com.kakao.sdk.AppKey\"\r\n            android:value=\"@string/kakao_app_key\" /> <!-- 파일프로바이더 생성 -->\r\n        <provider\r\n            android:name=\"androidx.core.content.FileProvider\"\r\n            android:authorities=\"${applicationId}.provider\"\r\n            android:exported=\"false\"\r\n            android:grantUriPermissions=\"true\">\r\n            <meta-data\r\n                android:name=\"android.support.FILE_PROVIDER_PATHS\"\r\n                android:resource=\"@xml/provider_paths\" />\r\n        </provider> <!-- 로그인 -->\r\n        <activity\r\n            android:name=\".LoginActivity\"\r\n            android:screenOrientation=\"portrait\" /> <!-- 회원가입 -->\r\n        <activity\r\n            android:name=\".JoinActivity\"\r\n            android:screenOrientation=\"portrait\" /> <!-- sns회원가입 -->\r\n        <activity\r\n            android:name=\".SnsJoinActivity\"\r\n            android:screenOrientation=\"portrait\" /> <!-- 약관동의 -->\r\n        <activity\r\n            android:name=\".TermActivity\"\r\n            android:screenOrientation=\"portrait\" />\r\n        <activity android:name=\".OutMemberReq\" />\r\n        <activity android:name=\".FriendList\" />\r\n        <activity android:name=\".Chating\" />\r\n        <activity android:name=\".SettingList\" />\r\n        <activity android:name=\".EditProject\" />\r\n        <activity android:name=\".CalList\" />\r\n        <activity android:name=\".CalManage\" />\r\n        <activity android:name=\".ShowTask\" />\r\n        <activity android:name=\".ShowFileList\" />\r\n        <activity android:name=\".ShowProject\" />\r\n        <activity android:name=\".addProjectC2\" />\r\n        <activity android:name=\".addProjectC1\" />\r\n        <activity android:name=\".BB_Write\" />\r\n        <activity android:name=\".CB_Write\" />\r\n        <activity android:name=\".BB_Read\" />\r\n        <activity android:name=\".CB_Read\" />\r\n        <activity\r\n            android:name=\".RequestSecDialog\"\r\n            android:launchMode=\"singleInstance\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/Theme.AppCompat.Translucent\" />\r\n        <activity\r\n            android:name=\".ResultSecDialog\"\r\n            android:launchMode=\"singleInstance\"\r\n            android:screenOrientation=\"portrait\"\r\n            android:theme=\"@style/Theme.AppCompat.Translucent\" />\r\n        <activity android:name=\".Notification_List\" />\r\n        <activity android:name=\".Feedback_List\" />\r\n        <activity android:name=\".Editor_profile\" />\r\n        <activity android:name=\".Friends_List\" />\r\n        <activity android:name=\".NoticeList\" />\r\n        <activity\r\n            android:name=\".Profile\"\r\n            android:parentActivityName=\".MainActivity\" /> <!-- 시작 -->\r\n        <activity android:name=\".First\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\" />\r\n\r\n        <receiver android:name=\".ReminderBroadcastReiceiver\" />\r\n\r\n        <service android:name=\".FirebaseMessagingService\">\r\n            <intent-filter>\r\n                <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />\r\n            </intent-filter>\r\n        </service>\r\n        <service android:name=\".FirebaseInstanceIDService\">\r\n            <intent-filter>\r\n                <action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" />\r\n            </intent-filter>\r\n        </service>\r\n\r\n        <receiver android:name=\".DismissReciever\" />\r\n        <receiver android:name=\".DisFriendReciever\" />\r\n        <receiver android:name=\".AccReciever\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/AndroidManifest.xml	(date 1611405440874)
+@@ -16,7 +16,7 @@
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme"
+         android:usesCleartextTraffic="true">
+-        <activity android:name=".AddFromRoom"></activity>
++        <activity android:name="Chatting.AddFromRoom"></activity>
+         <activity android:name=".ShowNotice" />
+ 
+         <uses-library
+@@ -46,24 +46,24 @@
+         <activity
+             android:name=".TermActivity"
+             android:screenOrientation="portrait" />
+-        <activity android:name=".OutMemberReq" />
+-        <activity android:name=".FriendList" />
+-        <activity android:name=".Chating" />
+-        <activity android:name=".SettingList" />
+-        <activity android:name=".EditProject" />
+-        <activity android:name=".CalList" />
+-        <activity android:name=".CalManage" />
+-        <activity android:name=".ShowTask" />
+-        <activity android:name=".ShowFileList" />
+-        <activity android:name=".ShowProject" />
+-        <activity android:name=".addProjectC2" />
+-        <activity android:name=".addProjectC1" />
++        <activity android:name="Project.Request.OutMemberReq" />
++        <activity android:name="Chatting.FriendList" />
++        <activity android:name="Chatting.Chating" />
++        <activity android:name="Project.SettingList" />
++        <activity android:name="Project.EditProject" />
++        <activity android:name="Project.CalList" />
++        <activity android:name="Project.CalManage" />
++        <activity android:name="Project.ShowTask" />
++        <activity android:name="Project.ShowFileList" />
++        <activity android:name="Project.ShowProject" />
++        <activity android:name="Project.addProjectC2" />
++        <activity android:name="Project.addProjectC1" />
+         <activity android:name=".BB_Write" />
+         <activity android:name=".CB_Write" />
+         <activity android:name=".BB_Read" />
+         <activity android:name=".CB_Read" />
+         <activity
+-            android:name=".RequestSecDialog"
++            android:name="Project.RequestSecDialog"
+             android:launchMode="singleInstance"
+             android:screenOrientation="portrait"
+             android:theme="@style/Theme.AppCompat.Translucent" />
+Index: app/src/main/res/layout/br_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:padding=\"15dp\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/barname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:text=\"아이디어 판매 글\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:textStyle=\"bold\" />\r\n        <ImageButton\r\n            android:id=\"@+id/backFromSet\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentLeft=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:background=\"#FFB400\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\" />\r\n        <TextView\r\n            android:id=\"@+id/b_del\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:textSize=\"20sp\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:visibility=\"invisible\"\r\n            android:textColor=\"#ffffff\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:text=\"삭제\" />\r\n\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/br_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/br_bar.xml	(date 1611404362998)
+@@ -5,7 +5,7 @@
+     android:padding="15dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+ 
+         <TextView
+             android:id="@+id/barname"
+Index: ../.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$/20201010RealP\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../.idea/vcs.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ ../.idea/vcs.xml	(date 1611056224723)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/20201010RealP" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: ../.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"684cfb73-c474-4904-8212-7bdd63337f10\" name=\"Default Changelist\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/20201010RealP/.idea/compiler.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/20201010RealP/.idea/gradle.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/20201010RealP/.idea/gradle.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/20201010RealP/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/20201010RealP/.idea/misc.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/20201010RealP\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1mjUCL861EVv9oOO2BzUSlRHk6s\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"android.sdk.path\" value=\"$USER_HOME$/AppData/Local/Android/Sdk\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/20201010RealP\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"AndroidSdkUpdater\" />\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"684cfb73-c474-4904-8212-7bdd63337f10\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1610006364580</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1610006364580</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"549\" y=\"167\" key=\"FileChooserDialogImpl\" timestamp=\"1610006527820\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"549\" y=\"167\" key=\"FileChooserDialogImpl/0.0.1536.824@0.0.1536.824\" timestamp=\"1610006527820\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../.idea/workspace.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ ../.idea/workspace.xml	(date 1611056441075)
+@@ -2,9 +2,8 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="684cfb73-c474-4904-8212-7bdd63337f10" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/20201010RealP/.idea/compiler.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/20201010RealP/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/20201010RealP/.idea/gradle.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/20201010RealP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/20201010RealP/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -12,7 +11,7 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/20201010RealP" />
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1mjUCL861EVv9oOO2BzUSlRHk6s" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -24,8 +23,8 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/20201010RealP" />
+-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+   </component>
+   <component name="SvnConfiguration">
+     <configuration />
+@@ -39,11 +38,32 @@
+       <updated>1610006364580</updated>
+     </task>
+     <servers />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <ignored-roots>
++      <path value="$PROJECT_DIR$/20201010RealP" />
++    </ignored-roots>
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610006527820">
++    <state x="479" y="0" key="#Unnamed" timestamp="1611056397600">
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610006527820" />
++    <state x="479" y="0" key="#Unnamed/0.0.1536.824@0.0.1536.824" timestamp="1611056397600" />
++    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611056440701">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1611056440701" />
++    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611056071350">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611056071350" />
++    <state x="277" y="56" key="SettingsEditor" timestamp="1611056224314">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611056224314" />
++    <state x="514" y="306" key="git4idea.ui.GitResetDialog" timestamp="1611055496391">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="514" y="306" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1611055496391" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_chating.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Chating\">\r\n\r\n    <RelativeLayout\r\n        android:id=\"@+id/relativeLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"60dp\"\r\n        android:background=\"@color/colorPrimary\"\r\n        android:orientation=\"horizontal\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_user\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentLeft=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:text=\"대상\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"25sp\" />\r\n        <TextView\r\n            android:id=\"@+id/tv_del\"\r\n            android:onClick=\"delChatRoom\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"20dp\"\r\n            android:text=\"삭제\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"25sp\" />\r\n    </RelativeLayout>\r\n\r\n    <View\r\n        android:id=\"@+id/view\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"1dp\"\r\n        android:background=\"#FFB400\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/linearLayout\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n    <RelativeLayout\r\n        android:id=\"@+id/linearLayout\"\r\n        android:layout_width=\"409dp\"\r\n        android:layout_height=\"64dp\"\r\n        android:orientation=\"horizontal\"\r\n        android:padding=\"5dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\">\r\n\r\n        <EditText\r\n            android:id=\"@+id/edtext\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:layout_marginTop=\"3dp\"\r\n            android:singleLine=\"true\"\r\n            android:layout_marginRight=\"10dp\"\r\n            android:inputType=\"textPersonName\"\r\n            android:layout_toLeftOf=\"@+id/send\"\r\n            android:layout_alignParentBottom=\"true\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toStartOf=\"@+id/send\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/send\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"match_parent\"\r\n            android:text=\"보내기\"\r\n            android:layout_alignParentRight=\"true\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\" />\r\n    </RelativeLayout>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:id=\"@+id/chatView\"\r\n        android:layout_marginBottom=\"10dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/view\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/relativeLayout\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_chating.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_chating.xml	(date 1611402335553)
+@@ -5,7 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".Chating">
++    tools:context="Chatting.Chating">
+ 
+     <RelativeLayout
+         android:id="@+id/relativeLayout"
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ .idea/vcs.xml	(date 1611057694250)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_chapter2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:theme=\"@style/Theme.AppCompat.Light\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".addProjectC2\">\r\n    <include\r\n        android:layout_height=\"wrap_content\"\r\n        layout=\"@layout/setteambar\"\r\n        android:layout_width=\"match_parent\"></include>\r\n\r\n    <LinearLayout\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:orientation=\"horizontal\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/txtName\"\r\n            android:layout_width=\"110dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"이름\"\r\n            android:gravity=\"center\"\r\n            android:textColor=\"#090808\"\r\n            android:textSize=\"25sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/txtChar\"\r\n            android:layout_width=\"180dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\"역할\"\r\n            android:textColor=\"#090808\"\r\n            android:textSize=\"25sp\" />\r\n        <TextView\r\n            android:layout_width=\"80dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:gravity=\"start\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"직책\"\r\n            android:textColor=\"#090808\"\r\n            android:textSize=\"25sp\" />\r\n    </LinearLayout>\r\n\r\n               <androidx.recyclerview.widget.RecyclerView\r\n                   android:layout_marginTop=\"10dp\"\r\n                   android:id=\"@+id/teamView\"\r\n                   android:layout_width=\"match_parent\"\r\n                   android:layout_height=\"300dp\"\r\n                   android:scrollbarFadeDuration=\"0\"\r\n                   android:scrollbarSize=\"5dp\"\r\n                   android:scrollbarThumbVertical=\"@android:color/darker_gray\"\r\n                   android:scrollbars=\"vertical\" />\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingLeft=\"15dp\"\r\n        android:paddingRight=\"15dp\">\r\n        <Button\r\n            android:onClick=\"addTeamInfo\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:background=\"@drawable/addbtndesign\"\r\n            android:gravity=\"left|center\"\r\n            android:padding=\"10dp\"\r\n            android:text=\"   +   팀원 추가\"\r\n            android:textColor=\"#0A0A0A\"\r\n            android:textSize=\"20sp\"\r\n            />\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:layout_marginTop=\"70dp\"\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:gravity=\"center\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/txtfinsih\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"이전\"\r\n            android:onClick=\"backOne\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#FFB400\"/>\r\n        <TextView\r\n            android:id=\"@+id/txtNext\"\r\n            android:layout_marginLeft=\"50dp\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"완료\"\r\n            android:onClick=\"makeTeam\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#FFB400\"/>\r\n    </LinearLayout>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_chapter2.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_chapter2.xml	(date 1611404363462)
+@@ -6,7 +6,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".addProjectC2">
++    tools:context="Project.addProjectC2">
+     <include
+         android:layout_height="wrap_content"
+         layout="@layout/setteambar"
+Index: app/src/main/res/layout/activity_chapter1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:theme=\"@style/Theme.AppCompat.Light\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".addProjectC1\">\r\n    <include\r\n        android:layout_height=\"wrap_content\"\r\n        layout=\"@layout/addprojectbar\"\r\n        android:layout_width=\"match_parent\"></include>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_marginTop=\"20dp\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n            <EditText\r\n                android:id=\"@+id/projectName\"\r\n                android:layout_width=\"270dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"프로젝트명\"\r\n                android:textCursorDrawable=\"@drawable/cursor_black\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\" />\r\n            <CheckBox\r\n                android:id=\"@+id/check_pt\"\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:buttonTint=\"#FFB400\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"미정\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n        <EditText\r\n            android:layout_marginTop=\"10dp\"\r\n            android:id=\"@+id/teamName\"\r\n            android:layout_width=\"270dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"팀명\"\r\n            android:textCursorDrawable=\"@drawable/cursor_black\"\r\n            android:backgroundTint=\"#FFB400\"\r\n            android:textSize=\"30sp\"\r\n            android:textColor=\"#090707\" />\r\n\r\n            <CheckBox\r\n                android:id=\"@+id/check_t\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:buttonTint=\"#FFB400\"\r\n                android:text=\"미정\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\">\r\n            <EditText\r\n                android:layout_marginTop=\"10dp\"\r\n                android:id=\"@+id/teamSubject\"\r\n                android:layout_width=\"270dp\"\r\n                android:textCursorDrawable=\"@drawable/cursor_black\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:hint=\"주제\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\" />\r\n\r\n            <CheckBox\r\n                android:id=\"@+id/check_s\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:buttonTint=\"#FFB400\"\r\n                android:text=\"미정\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:gravity=\"left|center\"\r\n            android:orientation=\"horizontal\">\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"시작기간\"\r\n                android:textColor=\"#090707\"\r\n                android:textSize=\"25sp\" />\r\n            <CheckBox\r\n                android:id=\"@+id/setToday\"\r\n                android:layout_marginLeft=\"20dp\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:buttonTint=\"#FFB400\"\r\n                android:text=\"오늘\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:paddingLeft=\"10dp\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            >\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:id=\"@+id/start1\"\r\n                android:maxLength=\"4\"\r\n                android:inputType=\"number\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"YYYY\"\r\n                android:gravity=\"center\"/>\r\n            <TextView\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_width=\"20dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"-\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\"/>\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:id=\"@+id/start2\"\r\n                android:maxLength=\"2\"\r\n                android:inputType=\"number\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"MM\"\r\n                android:gravity=\"center\"/>\r\n            <TextView\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_width=\"20dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"-\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\"/>\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:maxLength=\"2\"\r\n                android:id=\"@+id/start3\"\r\n                android:inputType=\"number\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"DD\"\r\n                android:gravity=\"center\"/>\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:gravity=\"left|center\"\r\n            android:orientation=\"horizontal\">\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"종료기간\"\r\n                android:textColor=\"#090707\"\r\n                android:textSize=\"25sp\" />\r\n            <CheckBox\r\n                android:id=\"@+id/setnull\"\r\n                android:layout_marginLeft=\"20dp\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:buttonTint=\"#FFB400\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"미정\" />\r\n        </LinearLayout>\r\n        <LinearLayout\r\n            android:paddingLeft=\"10dp\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            >\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:id=\"@+id/finish1\"\r\n                android:inputType=\"number\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:maxLength=\"4\"\r\n                android:hint=\"YYYY\"\r\n                android:gravity=\"center\"/>\r\n            <TextView\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_width=\"20dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"-\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\"/>\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:id=\"@+id/finish2\"\r\n                android:inputType=\"number\"\r\n                android:maxLength=\"2\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"MM\"\r\n                android:gravity=\"center\"/>\r\n            <TextView\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_width=\"20dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"-\"\r\n                android:textSize=\"30sp\"\r\n                android:textColor=\"#090707\"/>\r\n            <EditText\r\n                android:layout_width=\"80dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:id=\"@+id/finish3\"\r\n                android:inputType=\"number\"\r\n                android:maxLength=\"2\"\r\n                android:backgroundTint=\"#FFB400\"\r\n                android:hint=\"DD\"\r\n                android:gravity=\"center\"/>\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:layout_marginTop=\"50dp\"\r\n        android:orientation=\"horizontal\"\r\n        android:layout_width=\"match_parent\"\r\n        android:gravity=\"center\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/txtfinsih\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"취소\"\r\n            android:onClick=\"backMenu\"\r\n            android:textSize=\"25sp\"\r\n            android:textColor=\"#FFB400\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/txtNext\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"50dp\"\r\n            android:onClick=\"nextChapter\"\r\n            android:text=\"다음\"\r\n            android:textColor=\"#FFB400\"\r\n            android:textSize=\"25sp\" />\r\n    </LinearLayout>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_chapter1.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_chapter1.xml	(date 1611404363426)
+@@ -6,7 +6,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    tools:context=".addProjectC1">
++    tools:context="Project.addProjectC1">
+     <include
+         android:layout_height="wrap_content"
+         layout="@layout/addprojectbar"
+Index: app/src/main/res/layout/activity_show_task.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ShowTask\">\r\n\r\n    <include\r\n        android:id=\"@+id/include\"\r\n        layout=\"@layout/task_bar\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\" />\r\n\r\n    <com.google.android.material.tabs.TabLayout\r\n        android:id=\"@+id/tabLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:tabIndicatorColor=\"#FFB400\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/include\">\r\n\r\n        <com.google.android.material.tabs.TabItem\r\n            android:id=\"@+id/t_ing\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"진행\" />\r\n\r\n        <com.google.android.material.tabs.TabItem\r\n            android:id=\"@+id/t_finish\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"완료\" />\r\n\r\n    </com.google.android.material.tabs.TabLayout>\r\n    <LinearLayout\r\n        android:id=\"@+id/linearLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"16dp\"\r\n        android:layout_marginLeft=\"16dp\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"horizontal\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/tabLayout\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:paddingLeft=\"10dp\"\r\n            android:paddingTop=\"10dp\"\r\n            android:paddingBottom=\"10dp\"\r\n            android:text=\"분류\"\r\n            android:textSize=\"30sp\" />\r\n\r\n        <Spinner\r\n            android:layout_marginLeft=\"30dp\"\r\n            android:id=\"@+id/spinner\"\r\n            android:layout_width=\"200dp\"\r\n            android:layout_height=\"wrap_content\" />\r\n        <ImageView\r\n            android:id=\"@+id/iv_addTask\"\r\n            android:layout_marginLeft=\"20dp\"\r\n            android:layout_width=\"60dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:src=\"@drawable/addnamebutton\"/>\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/linearLayout2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:orientation=\"horizontal\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/linearLayout\">\r\n\r\n        <TextView\r\n            android:layout_width=\"100dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\"담당자\"\r\n            android:textColor=\"#0F0E0E\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"160dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:text=\"업무\"\r\n            android:textColor=\"#0F0E0E\"\r\n            android:textSize=\"20sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_findate\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"완료 기한\"\r\n            android:textColor=\"#0F0E0E\"\r\n            android:textSize=\"20sp\" />\r\n    </LinearLayout>\r\n\r\n    <FrameLayout\r\n        android:id=\"@+id/taskFrame\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/linearLayout2\"\r\n        app:layout_constraintVertical_bias=\"1.0\"></FrameLayout>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_show_task.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/activity_show_task.xml	(date 1611404363260)
+@@ -4,7 +4,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".ShowTask">
++    tools:context="Project.ShowTask">
+ 
+     <include
+         android:id="@+id/include"
+Index: app/src/main/res/layout/cal_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:background=\"#FFB400\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    tools:context=\".ShowProject\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:paddingLeft=\"20dp\"\r\n        android:paddingRight=\"20dp\"\r\n        android:paddingTop=\"20dp\"\r\n        android:layout_height=\"wrap_content\">\r\n        <TextView\r\n            android:id=\"@+id/calname\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"#ffffff\"\r\n            android:textSize=\"20sp\"\r\n            android:text=\"일정 관리\"/>\r\n        <ImageButton\r\n            android:background=\"#FFB400\"\r\n            android:id=\"@+id/iv_calback\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:src=\"@drawable/ic_arrow_back_black_24dp\"\r\n            android:layout_alignParentLeft=\"true\" />\r\n\r\n        <ImageView\r\n            android:id=\"@+id/iv_callist\"\r\n            android:layout_width=\"44dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:layout_centerInParent=\"true\"\r\n            android:layout_marginRight=\"0dp\"\r\n\r\n            android:src=\"@drawable/drawmenu\" />\r\n    </RelativeLayout>\r\n\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/cal_bar.xml	(revision 188a6cf6a56cdbcfe6363e36a8576bf8add5e7ec)
++++ app/src/main/res/layout/cal_bar.xml	(date 1611404363441)
+@@ -4,7 +4,7 @@
+     android:background="#FFB400"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+-    tools:context=".ShowProject">
++    tools:context="Project.ShowProject">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:paddingLeft="20dp"

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFB400">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="전용 채팅방 안내"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="등록되어있는 전용 채팅방이 없습니다.\n전용 채팅방을 새로 등록하시겠습니까?"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:paddingRight="5dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:lineSpacingExtra="5dp"
+        android:paddingLeft="15dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffb400"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/tv_br"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="기존 채팅방에서 등록"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:textColor="#000"
+        android:paddingBottom="10dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffb400"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/tv_nr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="새로 생성"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:textColor="#000"
+        android:paddingBottom="10dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffb400"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/tv_ccInGc"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:textColor="#000"
+        />
+
+
+</LinearLayout>

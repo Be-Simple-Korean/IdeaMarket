@@ -1,0 +1,29 @@
+package com.example.realp;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Editor_profile_Request extends StringRequest {
+    final static private String URL = "http://myhosting102.dothome.co.kr/Update_Profile.php";
+    private Map<String, String> map;
+    //private Map<String, String>parameters;
+
+    public Editor_profile_Request(String userPassword, String userName, int userAge, String userID, Response.Listener<String> listener) {
+        super(Method.POST, URL, listener, null);
+
+        map = new HashMap<>();
+        map.put("userID", userID);
+        map.put("userPassword", userPassword);
+        map.put("userName",userName);
+        map.put("userAge", userAge + " ");
+    }
+
+    @Override
+    protected Map<String, String>getParams() throws AuthFailureError {
+        return map;
+    }
+}
